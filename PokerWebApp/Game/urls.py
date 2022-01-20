@@ -1,7 +1,6 @@
 from django.urls import path
-from . import views
+from .views import *
 
 urlpatterns = [
-    path('', views.home, name = 'home'),
-    path("start_game", views.start_game)
+    path('', AjaxHandlerView.as_view())
 ]
