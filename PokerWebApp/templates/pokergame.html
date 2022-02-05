@@ -1,0 +1,25 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+<div class="wrapper">
+    <div class="one">{{ p1 }}</div>
+    <div class="two">{{ p2 }}</div>
+    <div class="three">{{ p3 }}</div>
+    <div class="four">{{ p4 }}</div>
+    <div class="five">{{ p5 }}</div>
+    <div class="six">{{ p6 }}</div>
+    <div class="seven">{{ p7 }}</div>
+    <div class="eight">{{ p8 }}</div>
+</div>
+
+<form method="post" action="">
+    {% csrf_token %}
+    <button type='submit' class="startbtn" name="action" value="startgame">Start</button>
+</form>
+
+<form method="post" action="">
+    {% csrf_token %}
+    <button type='submit' class="startbtn" name="action" value="endgame">End</button>
+</form>
+{% endblock %}

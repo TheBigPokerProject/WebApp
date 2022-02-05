@@ -1,25 +1,14 @@
 {% load static %}
-{% csrf_token %}
-
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
-<title>Poker Web App</title>
-<body>Poker Table</body>
+{% block title %}<title>Poker Web App</title>{% endblock %}
 
-<div class="wrapper">
-    <div class="one">{{ p1 }}</div>
-    <div class="two">{{ p2 }}</div>
-    <div class="three">{{ p3 }}</div>
-    <div class="four">{{ p4 }}</div>
-    <div class="five">{{ p5 }}</div>
-    <div class="six">{{ p6 }}</div>
-    <div class="seven">{{ p7 }}</div>
-    <div class="eight">{{ p8 }}</div>
-</div>
+<body>
+    {% block sidebar %}<!-- insert default navigation text for every page -->{% endblock %}
+    {% block content %}<!-- default content text (typically empty) -->{% endblock %}
+</body>
 
-<button type='button' class="startbtn">Start</button>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script> -->

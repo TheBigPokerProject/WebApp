@@ -8,24 +8,16 @@ from Game.models import Table
 
 table = Table()
 
-class AjaxHandlerView(View):
-
-    def get(self, request):
-        global table
-        action = request.GET.get('action')
-        table = Table()
-
-        print(table.get_context())
-        return render(request, 'home.html', table.get_context())
-
-    def post(self, request):
-        global table
-        action = request.POST.get('action')
-
-        if action == 'Start':
+def pokergame(request):
+    global table
+    
+    if request.method == "POST":
+        data = request.POST
+        action = data.get("action")
+        if action == "startgame":
             if (table.isGameRunning == False):
                 table.start_game()
-        else:
-            pass
-
-        return render(request, 'home.html', table.get_context())
+        elif action == "endgame":
+            table.reset_table()
+    
+    return render(request, 'pokergame.html', table.get_context())

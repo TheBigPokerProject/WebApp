@@ -18,11 +18,11 @@ class PlayerHand(models.Model):
     def deal_card(self, card):
         if (self.first_card == ""):
             self.first_card = card
-            return
+            return 
         elif (self.second_card == ""):
             self.second_card = card
             return
-        raise RuntimeError("Dealer is drunk. Giving three cards to a player.")
+        return ""
     
     def take_hand_from_player(self):
         self.first_card = ""
